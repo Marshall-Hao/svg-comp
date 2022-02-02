@@ -4,7 +4,7 @@
       :width="width"
       :height="height"
       viewBox="0 0 50 50"
-      preserveAspectRatio="xMidYmid meet"
+      preserveAspectRatio="xMidYMid meet"
     >
       <!--2pi * R / 4 -->
       <!-- stroke-linecap 定义圆角 方角 -->

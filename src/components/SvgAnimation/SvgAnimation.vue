@@ -85,8 +85,18 @@
   <div class="container">
     <svg width="200" height="200">
       <rect x="0" y="0" fill="red" width="100" height="50">
-        <set attributeName="x" attributeType="XML" to="10" begin="1s"></set>
-        <set attributeName="x" attributeType="XML" to="20" begin="2s"></set>
+        <set
+          attributeName="x"
+          attributeType="XML"
+          to="10"
+          begin="1s"
+        ></set>
+        <set
+          attributeName="x"
+          attributeType="XML"
+          to="20"
+          begin="2s"
+        ></set>
         <set
           attributeName="fill"
           attributeType="XML"
@@ -144,7 +154,11 @@
   </div>
   <div class="container">
     <svg width="400" height="400">
-      <polygon points="30 30 70 30 90 70 10 70" fill="#fcc" stroke="black">
+      <polygon
+        points="30 30 70 30 90 70 10 70"
+        fill="#fcc"
+        stroke="black"
+      >
         <animate
           attributeName="points"
           attributeType="XML"
@@ -229,7 +243,15 @@
   <div class="container">
     <svg viewBox="0 0 200 200" width="200" height="200">
       <g id="rect1">
-        <rect x="0" y="0" rx="0" ry="0" width="100" height="100" fill="red">
+        <rect
+          x="0"
+          y="0"
+          rx="0"
+          ry="0"
+          width="100"
+          height="100"
+          fill="red"
+        >
           <animate
             attributeType="XML"
             attributeName="fill"
@@ -252,7 +274,13 @@
         dur="2s"
         fill="freeze"
       />
-      <rect x="0" y="100" width="100" height="100" fill="blue">
+      <rect
+        x="0"
+        y="100"
+        width="100"
+        height="100"
+        fill="blue"
+      >
         <animate
           attributeType="XML"
           attributeName="fill"
@@ -263,6 +291,99 @@
           fill="freeze"
         />
       </rect>
+    </svg>
+  </div>
+  <div class="container">
+    <svg width="400" height="400">
+      <defs>
+        <mask id="test-mask">
+          <rect
+            x="5"
+            y="5"
+            width="300"
+            height="300"
+            fill="red"
+          ></rect>
+          <circle cx="150" cy="150" r="100"></circle>
+        </mask>
+      </defs>
+      <rect
+        x="5"
+        y="5"
+        width="300"
+        height="300"
+        fill="red"
+      ></rect>
+      <!-- * 被当为蒙版mask了 -->
+      <rect
+        x="5"
+        y="5"
+        width="300"
+        height="300"
+        fill="blue"
+        mask="url(#test-mask)"
+      ></rect>
+    </svg>
+  </div>
+  <div class="container">
+    <svg width="400" height="400">
+      <defs>
+        <linearGradient id="linear-gradient">
+          <stop
+            offset="0"
+            stop-color="red"
+            stop-opacity="1"
+          ></stop>
+          <stop
+            offset="50%"
+            stop-color="green"
+            stop-opacity="0.8"
+          ></stop>
+          <stop
+            offset="100"
+            stop-color="blue"
+            stop-opacity="0"
+          ></stop>
+        </linearGradient>
+        <!-- 光影效果 -->
+        <radialGradient
+          id="radial-graident"
+          cx="50%"
+          cy="50%"
+          fx="25%"
+          fy="75%"
+          r="50%"
+        >
+          <stop
+            offset="0"
+            stop-color="white"
+            stop-opacity="1"
+          ></stop>
+          <stop
+            offset="10%"
+            stop-color="yellow"
+            stop-opacity="1"
+          ></stop>
+          <stop
+            offset="95%"
+            stop-color="red"
+            stop-opacity="1"
+          ></stop>
+        </radialGradient>
+      </defs>
+      <!-- <rect
+        x="0"
+        y="0"
+        width="300"
+        height="300"
+        fill="url(#linear-gradient)"
+      ></rect> -->
+      <circle
+        cx="200"
+        cy="200"
+        r="150"
+        fill="url(#radial-graident)"
+      ></circle>
     </svg>
   </div>
 </template>
